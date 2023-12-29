@@ -1,7 +1,7 @@
 package com.mts.mtswebscraper.service.impl;
 
-import com.mts.mtswebscraper.service.impl.Movie.MovieBuilder;
 import com.mts.mtswebscraper.service.Parser;
+import com.mts.mtswebscraper.service.impl.Movie.MovieBuilder;
 import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Service;
 
@@ -97,7 +97,7 @@ public class RedHeadSoundParser implements Parser {
         var text = param.text();
         text = text.replaceAll("Режиссер: ", "");
         List<String> directors = Arrays.asList(text.split(", "));
-        return  movieBuilder.directors(directors);
+        return movieBuilder.directors(directors);
     }
 
     private MovieBuilder addDuration(Element param, MovieBuilder movieBuilder) {

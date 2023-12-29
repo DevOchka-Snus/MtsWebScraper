@@ -16,10 +16,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RedHeadSoundMovieService implements MovieService {
     private final Parser parser;
+
     @Override
     public List<Movie> getAllMovies() throws IOException {
         List<Movie> movies = new ArrayList<>();
-        for (int page = 1; page < 18; page++){
+        for (int page = 1; page < 18; page++) {
             Document document = Jsoup.connect("https://redheadsound.studio/page/" + page).get();
             Elements posts = document.getElementsByClass("card d-flex");
             for (var post : posts) {
